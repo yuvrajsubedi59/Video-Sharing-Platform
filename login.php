@@ -98,75 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
 
 </head>
-<body>
-  
-  <!-- modal for online technical document-->
-  <div class="modal fade" id="document">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1>Technical Document</h1>
-        </div>
-        <div class="modal-body">
-          <h2>Architecture</h2>
-          <p>
-            Upon visiting our site, the first page that a user will see is a login page. If a user has already made 
-            an account, they can login using their registered username and password. If they have not, they will have 
-            to go to the sign up page and make one. Registering on our site stores the user’s chosen username in a 
-            database along with a hashed version of their password, so that their password is not stolen. Registration 
-            only requires choosing a username not in use and a password. <br>
-            Once logged in, the user is sent to our homepage where they can view a list of currently uploaded videos, 
-            choose to sign out of their account, or go to the upload page. On the upload page, the user may choose to 
-            upload a new video from their computer, complete with a title, thumbnail and description for the video. 
-            Uploading a new video stores the video and thumbnail in storage folders on the server and the other related 
-            information in a separate database. This includes the name of the video, the storage location of the video 
-            and thumbnail, and the user provided description for the video. <br>
-            Clicking on one of the listed video previews on the homepage will open the video in the user’s web browser 
-            using the html video tag so that they can watch it. It will also display the video’s title, description, and 
-            upload date underneath the video, along with who uploaded it and a list of other videos for the user to watch.
-          </p>
-          <h2>Business Logic</h2>
-          <p>
-            With our project providing the same surface level service as the already well established Youtube, 
-            our website would have to differentiate itself in a way that would be able to compete. Many content 
-            creators on Youtube have a lot of gripes with their service, primarily with how video recommendations work and issues with 
-            monetization of their videos, so by addressing the problems that they have on Youtube and guaranteeing 
-            they won’t have the same issues on our site, many content creators may choose to migrate to our platform. <br>
-            To do this, we plan to come up with a different way from Youtube to recommend videos to users on the 
-            homepage, and also address how ads will be handled. We also plan to come up with some way to promote 
-            individual content creators who aren’t already basically celebrities, to put the focus of our site on the 
-            content creators that help to make our website what it is.
-          </p>
-          <h2>Database Design</h2>
-          <p>
-            We have a database setup with two different tables. The first table is used for user accounts. It stores the usernames
-            and passwords for every account that is made on our website. The passwords are hashed before storage for an extra 
-            layer of security for the accounts. The second table is used for uploaded video information. It stores the title, 
-            description, and file path for every video uploaded along with the filename of the video and thumbnail (if one 
-            was provided) and the username of who uploaded the video.
-          </p>
-          <h2>Member Contributions</h2>
-          <p>
-            Our original intent was to have the website be accessible through Amazon Web Services, so I (Kyle) had made an 
-            AWS account so that we may work on doing that. I set up an Elastic Beanstalk (EB) instance for us to host our 
-            website on and setup an RDS database for us to use as well. The login and homepage were written by Yuvraj and 
-            uploaded to the EB instance, but proved to have some sort of incompatibility issue with EB and how we were 
-            connecting to the database, so we uploaded it to Pausch instead and got it working there. The database for video 
-            information is still hosted on AWS, however the videos themselves are not. I set up an AWS S3 bucket so that we 
-            could host the videos on AWS, but we ended up not using it after moving the website to Pausch since we would have 
-            had to install the AWS SDK. The page for uploading new videos and viewing them was started by me, but Yuvraj ended 
-            up finishing it. I added the technical document and the online help to website, along with the popups for viewing them. 
-            Yuvraj and I both worked on the css for the website, making any changes we each liked.
-          </p>
-        </div>
-        <div class="modal-footer">
-          <a href="ISP Project Powerpoint.ppt" target="_blank">View Project Powerpoint</a>
-          <a href="ISP Project Report.pdf" target="_blank">View Project Report PDF</a>
-          <input type="button" class="btn btn-primary" data-dismiss="modal" value="Close">
-        </div>
-      </div>
-    </div>
-  </div>  
+<body>  
 
   <!-- modal for online help-->
   <div class="modal fade" id="help">
@@ -178,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="modal-body">
           <h2>Registering</h2>
           <p>
-            To register an account on our website, you must first click on the Register button to go to the registration page. 
+            To register an account on this website, you must first click on the Register button to go to the registration page. 
             From there, simply type in your desired username and password for your account. If an account already exists with your
             chosen username, you will need to choose a different username. Passwords must be at least 6 letters long to register an 
             account.
